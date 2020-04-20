@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Navbar from './components/Navbar';
 import { ThemeContext } from './contexts/ThemeContext';
 import '../src/styles/global.css';
+import { Directory } from './pages/Directory';
 
 function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -10,14 +11,7 @@ function App() {
       <div className='App'>
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <main>
-          <h1>Hello World</h1>
-          <p>
-            Test lorem ipsum docum dipsum Test lorem ipsum docum dipsum Test
-            lorem ipsum docum dipsum Test lorem ipsum docum dipsum Test lorem
-            ipsum docum dipsum Test lorem ipsum docum dipsum Test lorem ipsum
-            docum dipsum Test lorem ipsum docum dipsum Test lorem ipsum docum
-            dipsum Test lorem ipsum docum dipsum Test lorem ipsum docum dipsum
-          </p>
+          <Directory />
         </main>
       </div>
     </div>
