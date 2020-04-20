@@ -4,6 +4,12 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   return (
     <div className={darkMode ? 'dark-mode' : 'light-mode'}>
       <nav>
+        <h1>
+          Popcorn Chill{' '}
+          <span role='img' aria-label='popcorn emoji'>
+            🍿
+          </span>
+        </h1>
         <div className='toggle-container'>
           <span className='toggle'>
             <input

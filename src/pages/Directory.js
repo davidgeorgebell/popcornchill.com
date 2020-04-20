@@ -1,10 +1,18 @@
 import React from 'react';
 import { useFetch } from '../hooks/useFetch';
 
+const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 export const Directory = () => {
-  const response = useFetch(
-    `https://api.themoviedb.org/3/movie/550?api_key=11863a769dbc470cee78fb16cf3cfe4d`
+  const { response, error, loading } = useFetch(
+    `https://api.themoviedb.org/3/movie/550?api_key=${API_KEY}`
   );
+  if (loading) return <h1>Loading...</h1>;
+  if (error)
+    return (
+      <h1>
+        Whoops. <p>Sorry but an error has occurred.</p>
+      </h1>
+    );
   console.log(response);
   return (
     <div>
