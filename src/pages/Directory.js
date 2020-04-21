@@ -24,7 +24,10 @@ export const Directory = () => {
   const pageLimit = page === 0 || page < total_pages;
   return (
     <div>
-      <select value={option} onChange={e => handleOptionChange(e)}>
+      <select
+        value={option}
+        onChange={e => handleOptionChange(e)}
+        onBlur={e => handleOptionChange(e)}>
         <option value='popular'>Popular</option>
         <option value='top_rated'>Top Rated</option>
         <option value='now_playing'>Now Playing</option>
