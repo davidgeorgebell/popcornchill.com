@@ -33,20 +33,18 @@ h5,
 h6 {
   color: var(--alpha);
 }
-.light-mode p,
-li,
-input,
-a {
-  color: var(--bravo);
-}
 .dark-mode {
   background-color: var(--dark);
   transition: background-color 0.25s ease-out;
 }
-.dark-mode p,
-li,
-input,
-a {
+.light-mode li,
+p,
+input {
+  color: var(--bravo);
+}
+.dark-mode li,
+p,
+input {
   color: var(--bravoDark);
 }
 .dark-mode h1,
