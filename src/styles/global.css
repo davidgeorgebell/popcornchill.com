@@ -14,13 +14,29 @@
 *::after {
   box-sizing: border-box;
 }
+html body {
+  min-height: 100%;
+}
 main {
   margin: 0 auto;
   max-width: 750px;
-  height: 100vh;
   padding: 1rem;
 }
-
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--alphaFont);
+}
+.App {
+  min-height: 100vh;
+}
+.dark-mode {
+  background-color: var(--dark);
+  transition: background-color 0.25s ease-out;
+}
 .light-mode {
   background-color: var(--light);
   transition: background-color 0.25s ease-out;
@@ -33,10 +49,7 @@ h5,
 h6 {
   color: var(--alpha);
 }
-.dark-mode {
-  background-color: var(--dark);
-  transition: background-color 0.25s ease-out;
-}
+
 .light-mode li,
 p,
 input {
@@ -80,14 +93,6 @@ dd {
   margin: 0;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-family: var(--alphaFont);
-}
 h1,
 h2,
 h3,

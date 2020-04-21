@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
+import { MovieList } from '../components/MovieList';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const baseURL = `https://api.themoviedb.org/3/movie/`;
@@ -13,7 +14,6 @@ export const Directory = () => {
   );
   if (loading) return null;
   if (error) return <h1>Error!</h1>;
-  console.log(response);
 
   const { results, page, total_pages } = response;
 
@@ -32,12 +32,7 @@ export const Directory = () => {
         <option value='top_rated'>Top Rated</option>
         <option value='now_playing'>Now Playing</option>
       </select>
-      <ul>
-        {results &&
-          results.map(movie => {
-            return <li key={movie.id}>{movie.title}</li>;
-          })}
-      </ul>
+      <MovieList results={results} />
       {results && (
         <>
           <button
