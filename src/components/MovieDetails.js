@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const MovieDetails = ({
   imageUrl,
@@ -35,7 +36,12 @@ export const MovieDetails = ({
       <div className='movie-details__description'></div>
       <p>{release_date}</p>
       <ul>
-        {genres && genres.map(genre => <li key={genre.name}>{genre.name}</li>)}
+        {genres &&
+          genres.map(genre => (
+            <li key={genre.name}>
+              <Link to={`/genre/${genre.id}`}>{genre.name}</Link>
+            </li>
+          ))}
       </ul>
       <p>{overview}</p>
     </>
