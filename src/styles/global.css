@@ -42,31 +42,37 @@ body {
   transition: background-color 0.25s ease-out;
 }
 .light-mode h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6 {
   color: var(--alpha);
+}
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: var(--light);
 }
 
 .light-mode li,
-p,
-input {
+.light-mode p,
+.light-mode input,
+.light-mode time,
+.light-mode span,
+.light-mode a {
   color: var(--bravo);
 }
 .dark-mode li,
-p,
-input {
+.dark-mode p,
+.dark-mode input,
+.dark-mode time,
+.dark-mode span,
+.dark-mode a {
   color: var(--bravoDark);
-}
-.dark-mode h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--light);
 }
 
 /* Remove default padding */
@@ -112,7 +118,9 @@ ol[class] {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
-
+a[class] {
+  text-decoration: none;
+}
 /* Make images easier to work with */
 img {
   max-width: 100%;

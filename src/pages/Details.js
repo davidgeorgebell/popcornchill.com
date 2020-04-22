@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useFetch } from '../hooks/useFetch';
 import { useParams } from 'react-router-dom';
+import { MovieDetails } from '../components/MovieDetails';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const baseURL = `https://api.themoviedb.org/3/movie/`;
@@ -15,11 +16,30 @@ export const Details = () => {
   if (loading) return null;
   if (error) return <h1>Error!</h1>;
 
-  console.log('RESPONSE', response.title);
+  const imageUrl = 'https://image.tmdb.org/t/p/w400/';
 
+  console.log('RESPONSE', response);
+  const {
+    title,
+    vote_average,
+    overview,
+    runtime,
+    poster_path,
+    release_date,
+    genres,
+  } = response;
   return (
-    <div>
-      <h1>{response.title}</h1>
+    <div className='movie-details-wrapper'>
+      <MovieDetails
+        title={title}
+        vote_average={vote_average}
+        overview={overview}
+        runtime={runtime}
+        poster_path={poster_path}
+        release_date={release_date}
+        genres={genres}
+        imageUrl={imageUrl}
+      />
     </div>
   );
 };
