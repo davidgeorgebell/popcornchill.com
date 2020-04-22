@@ -1,14 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   return (
     <div className={darkMode ? 'dark-mode' : 'light-mode'}>
       <nav>
-        <h1>
-          Popcorn Chill{' '}
-          <span role='img' aria-label='popcorn emoji'>
-            🍿
-          </span>
+        <h1 className='title'>
+          <Link to='/' className='home-link'>
+            {' '}
+            Popcorn Chill{' '}
+            <span role='img' aria-label='popcorn'>
+              🍿
+            </span>
+          </Link>
         </h1>
         <div className='toggle-container'>
           <span className='toggle'>

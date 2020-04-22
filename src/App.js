@@ -12,6 +12,7 @@ import '../src/styles/global.css';
 import { Directory } from './pages/Directory';
 import { Details } from './pages/Details';
 import { GenrePage } from './pages/GenrePage';
+import { GenreDirectory } from './pages/GenreDirectory';
 
 function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -30,6 +31,9 @@ function App() {
               </Route>
               <Route exact path='/genre/:genreId'>
                 <GenrePage />
+              </Route>
+              <Route exact path='/genres'>
+                <GenreDirectory />
               </Route>
               <Redirect to='/' />
             </Switch>

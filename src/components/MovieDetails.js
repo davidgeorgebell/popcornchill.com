@@ -15,18 +15,18 @@ export const MovieDetails = ({
     <>
       <div className='movie-details__top'>
         <h1>{title}</h1>
-        <img src={`${imageUrl}${poster_path}`} alt={`${title} poster`} />
+        <img src={`${imageUrl}${poster_path}`} alt={`${title} Poster`} />
         <div className='votes'>
           <p>
-            {vote_average}{' '}
             <span role='img' aria-label='star'>
               ⭐️
-            </span>
+            </span>{' '}
+            {vote_average} / 10
           </p>
         </div>
         <time>
           <p>
-            {runtime} mins{' '}
+            Runtime: {runtime} mins{' '}
             <span role='img' aria-label='clock'>
               🕐
             </span>
@@ -34,12 +34,16 @@ export const MovieDetails = ({
         </time>
       </div>
       <div className='movie-details__description'></div>
-      <p>{release_date}</p>
+      <p>Release Date: {release_date}</p>
       <ul>
         {genres &&
           genres.map(genre => (
             <li key={genre.name}>
-              <Link to={`/genre/${genre.id}`}>{genre.name}</Link>
+              <Link
+                to={`/genre/${genre.id}`}
+                aria-label={`link to other movies in ${genre.name}`}>
+                {genre.name}
+              </Link>
             </li>
           ))}
       </ul>

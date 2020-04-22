@@ -17,6 +17,7 @@
 html body {
   min-height: 100%;
 }
+
 main {
   margin: 0 auto;
   max-width: 750px;
