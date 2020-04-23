@@ -3,6 +3,7 @@ import React from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import { MovieDetails } from '../components/MovieDetails';
+import { BackButton } from '../components/BackButton';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const baseURL = `https://api.themoviedb.org/3/movie/`;
@@ -30,6 +31,7 @@ export const Details = () => {
   } = response;
   return (
     <div className='movie-details-wrapper'>
+      <BackButton>BACK</BackButton>
       <MovieDetails
         title={title}
         vote_average={vote_average}

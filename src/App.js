@@ -13,6 +13,7 @@ import { Directory } from './pages/Directory';
 import { Details } from './pages/Details';
 import { GenrePage } from './pages/GenrePage';
 import { GenreDirectory } from './pages/GenreDirectory';
+import { Search } from './pages/Search';
 
 function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -34,6 +35,9 @@ function App() {
               </Route>
               <Route exact path='/genres'>
                 <GenreDirectory />
+              </Route>
+              <Route exact path='/search'>
+                <Search />
               </Route>
               <Redirect to='/' />
             </Switch>

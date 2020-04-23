@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { MovieList } from '../components/MovieList';
 import { PaginationButtons } from '../components/PaginationButtons';
-import { GenreDirectory } from './GenreDirectory';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const baseURL = `https://api.themoviedb.org/3/movie/`;
@@ -26,7 +25,6 @@ export const Directory = () => {
   const pageLimit = page === 0 || page < total_pages;
   return (
     <div>
-      <GenreDirectory />
       <select
         value={option}
         onChange={e => handleOptionChange(e)}
