@@ -28,8 +28,8 @@ html body {
 }
 
 main {
-  margin: 0 auto;
-  max-width: 750px;
+  margin: 0;
+  max-width: 900px;
   padding: 1rem;
 }
 /* Set core body defaults */
@@ -49,6 +49,9 @@ button {
   font-weight: bolder;
   font-size: 1rem;
   cursor: pointer;
+}
+button:disabled {
+  cursor: initial;
 }
 .light-mode button {
   box-shadow: -3px 5px var(--colour-darkish);
@@ -71,7 +74,7 @@ button {
   min-height: 100vh;
 }
 .dark-mode {
-  background-color: var(--colour-darkish);
+  background-color: var(--colour-dark);
   transition: background-color 0.25s ease-out;
 }
 .light-mode {
@@ -176,6 +179,13 @@ select {
   font: inherit;
 }
 
+.genre-link {
+  text-decoration: none;
+  font-weight: 600;
+}
+.genre-link:hover {
+  text-decoration: underline;
+}
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -187,21 +197,21 @@ select {
 }
 @media (min-width: 640px) {
   body {
-    font-size: 14px;
+    font-size: 17px;
   }
 }
 @media (min-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 19px;
   }
 }
 @media (min-width: 1024px) {
   body {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1280px) {
   body {
-    font-size: 20px;
+    font-size: 22px;
   }
 }

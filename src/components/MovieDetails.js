@@ -18,28 +18,39 @@ export const MovieDetails = ({
         <img src={`${imageUrl}${poster_path}`} alt={`${title} Poster`} />
         <div className='votes'>
           <p>
-            <span role='img' aria-label='star'>
-              ⭐️
-            </span>{' '}
-            {vote_average} / 10
+            <strong>
+              <span role='img' aria-label='star' style={{ fontSize: '1.7rem' }}>
+                ✰
+              </span>{' '}
+              {vote_average} / 10
+            </strong>
           </p>
         </div>
         <time>
           <p>
-            Runtime: {runtime} mins{' '}
-            <span role='img' aria-label='clock'>
-              🕐
-            </span>
+            Runtime:{' '}
+            <strong>
+              {runtime} mins{' '}
+              <span
+                role='img'
+                aria-label='clock'
+                style={{ fontSize: '1.7rem' }}>
+                ⌛︎
+              </span>
+            </strong>
           </p>
         </time>
       </div>
       <div className='movie-details__description'></div>
-      <p>Release Date: {release_date}</p>
+      <p>
+        Released: <strong>{release_date}</strong>
+      </p>
       <ul>
         {genres &&
           genres.map(genre => (
             <li key={genre.name}>
               <Link
+                className='genre-link'
                 to={`/genre/${genre.id}`}
                 aria-label={`link to other movies in ${genre.name}`}>
                 {genre.name}

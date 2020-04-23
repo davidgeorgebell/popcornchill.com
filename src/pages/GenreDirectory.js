@@ -20,7 +20,9 @@ export const GenreDirectory = () => {
         {genres &&
           genres.map(genre => (
             <li key={genre.name}>
-              <Link to={`/genre/${genre.id}`}>{genre.name}</Link>
+              <Link className='genre-link' to={`/genre/${genre.id}`}>
+                {genre.name}
+              </Link>
             </li>
           ))}
       </ul>

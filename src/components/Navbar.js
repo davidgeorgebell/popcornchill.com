@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import '../styles/navbar.css';
+
 const Navbar = ({ darkMode, setDarkMode }) => {
   return (
     <div className={darkMode ? 'dark-mode' : 'light-mode'}>

@@ -37,7 +37,7 @@ export const Directory = () => {
         disabled={option === 'top_rated'}>
         Top Rated
       </button>
-
+      {option === 'popular' ? <h2>Popular</h2> : <h2>Top Rated</h2>}
       <MovieList results={results} />
       {results && (
         <PaginationButtons
