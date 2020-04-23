@@ -108,13 +108,15 @@ button:disabled {
 }
 .dark-mode li,
 .dark-mode p,
-.dark-mode input,
 .dark-mode time,
 .dark-mode span,
 .dark-mode a {
   color: var(--colour-lightish);
 }
 
+input::placeholder {
+  color: var(--colour-dark);
+}
 /* Remove default padding */
 ul[class],
 ol[class] {

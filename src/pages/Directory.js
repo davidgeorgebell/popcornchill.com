@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { useFetch } from '../hooks/useFetch';
 import { MovieList } from '../components/MovieList';
@@ -27,6 +28,19 @@ export const Directory = () => {
 
   return (
     <div>
+      <ul>
+        <li>
+          {' '}
+          <Link to='/genres' className='genre-link'>
+            Genres
+          </Link>
+        </li>
+        <li>
+          <Link to='/search' className='genre-link'>
+            Search
+          </Link>
+        </li>
+      </ul>
       <button
         onClick={() => handleOptionChange('popular')}
         disabled={option === 'popular'}>
@@ -37,6 +51,7 @@ export const Directory = () => {
         disabled={option === 'top_rated'}>
         Top Rated
       </button>
+
       {option === 'popular' ? <h2>Popular</h2> : <h2>Top Rated</h2>}
       <MovieList results={results} />
       {results && (

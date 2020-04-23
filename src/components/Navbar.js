@@ -11,12 +11,14 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <Link to='/' className='home-link'>
             {' '}
             Popcorn Chill{' '}
-            <span role='img' aria-label='popcorn'>
+            {/* <span role='img' aria-label='popcorn'>
               🍿
-            </span>
+            </span> */}
           </Link>
         </h1>
+
         <div className='toggle-container'>
+          <span>theme toggler for user enjoyment →</span>
           <span className='toggle'>
             <input
               checked={darkMode}

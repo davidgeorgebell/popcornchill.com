@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { MovieList } from '../components/MovieList';
+import { BackButton } from '../components/BackButton';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const language = '&language=en';
@@ -26,7 +27,8 @@ export const Search = () => {
   };
 
   return (
-    <>
+    <div className='search-page-wrapper'>
+      <BackButton>Back</BackButton>
       <form type='submit' onSubmit={handleSubmit}>
         <input
           type='text'
@@ -36,6 +38,6 @@ export const Search = () => {
         />
       </form>
       <MovieList results={results} />
-    </>
+    </div>
   );
 };

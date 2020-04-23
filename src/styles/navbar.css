@@ -1,0 +1,72 @@
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.title {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+input[type='checkbox'].checkbox {
+  width: 40px;
+  height: 15px;
+  background: var(--colour-mid);
+  position: relative;
+  border-radius: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+}
+
+input[type='checkbox'].checkbox:checked + label {
+  left: 30px;
+}
+
+input[type='checkbox'].checkbox:focus-visible {
+  outline: solid 2px violet;
+}
+
+input[type='checkbox'].checkbox + label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: absolute;
+  left: 2px;
+  background: var(--colour-lightish);
+  opacity: 0.9;
+}
+.light-mode input[type='checkbox'].checkbox + label {
+  background-color: var(--colour-dark);
+}
+.toggle-container {
+  display: flex;
+}
+
+.toggle-container > span {
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-top: 4px;
+  margin-right: 2px;
+}
+
+.toggle-container > span:last-child {
+  margin-top: 5px;
+}
+
+.toggle {
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
