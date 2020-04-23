@@ -28,8 +28,8 @@ html body {
 }
 
 main {
-  margin: 0;
-  max-width: 900px;
+  margin: 0 auto;
+  width: 90%;
   padding: 1rem;
 }
 /* Set core body defaults */
@@ -188,6 +188,10 @@ select {
 .genre-link:hover {
   text-decoration: underline;
 }
+.option-title {
+  text-align: center;
+  font-size: 4rem;
+}
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -201,19 +205,47 @@ select {
   body {
     font-size: 17px;
   }
+  .option-title {
+    text-align: end;
+    font-size: 6rem;
+  }
 }
 @media (min-width: 768px) {
   body {
     font-size: 19px;
+  }
+  .option-title {
+    text-align: end;
+    font-size: 8rem;
   }
 }
 @media (min-width: 1024px) {
   body {
     font-size: 20px;
   }
+  .option-title {
+    text-align: end;
+    font-size: 9rem;
+  }
 }
 @media (min-width: 1280px) {
   body {
     font-size: 22px;
   }
+  .option-title {
+    text-align: end;
+    font-size: 10rem;
+  }
 }
+/* @media (-width: 768px) {
+  .option-title {
+    text-align: center;
+    font-size: 4rem;
+  }
+}
+@media (max-width: 900px) {
+  .option-title {
+    text-align: center;
+    font-size: 5rem;
+  }
+} */

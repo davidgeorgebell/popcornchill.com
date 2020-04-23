@@ -52,7 +52,11 @@ export const Directory = () => {
         Top Rated
       </button>
 
-      {option === 'popular' ? <h2>Popular</h2> : <h2>Top Rated</h2>}
+      {option === 'popular' ? (
+        <h2 className='option-title'>Popular</h2>
+      ) : (
+        <h2 className='option-title'>Top Rated</h2>
+      )}
       <MovieList results={results} />
       {results && (
         <PaginationButtons
