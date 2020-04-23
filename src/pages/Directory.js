@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { useFetch } from '../hooks/useFetch';
 import { MovieList } from '../components/MovieList';
 import { PaginationButtons } from '../components/PaginationButtons';
@@ -27,12 +28,16 @@ export const Directory = () => {
     <div>
       <select
         value={option}
-        onChange={e => handleOptionChange(e)}
-        onBlur={e => handleOptionChange(e)}>
+        onChange={handleOptionChange}
+        onBlur={handleOptionChange}>
         <option value='popular'>Popular</option>
         <option value='top_rated'>Top Rated</option>
         <option value='now_playing'>Now Playing</option>
       </select>
+      <button value='popular'>Popular</button>
+      <button value='top_rated'>Top Rated</button>
+      <button value='now_playing'>Now Playing</button>
+
       <MovieList results={results} />
       {results && (
         <PaginationButtons
