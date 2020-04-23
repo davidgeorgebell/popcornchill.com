@@ -18,25 +18,17 @@ export const Directory = () => {
   if (error) return <h1>Error!</h1>;
 
   const { results, page, total_pages } = response;
+  const pageLimit = page === 0 || page < total_pages;
 
-  const handleOptionChange = e => {
-    setOption(e.target.value);
+  const handleOptionChange = option => {
+    setOption(option);
     setPageNumber(1);
   };
-  const pageLimit = page === 0 || page < total_pages;
+
   return (
     <div>
-      <select
-        value={option}
-        onChange={handleOptionChange}
-        onBlur={handleOptionChange}>
-        <option value='popular'>Popular</option>
-        <option value='top_rated'>Top Rated</option>
-        <option value='now_playing'>Now Playing</option>
-      </select>
-      <button value='popular'>Popular</button>
-      <button value='top_rated'>Top Rated</button>
-      <button value='now_playing'>Now Playing</button>
+      <button onClick={() => handleOptionChange('popular')}>Popular</button>
+      <button onClick={() => handleOptionChange('top_rated')}>Top Rated</button>
 
       <MovieList results={results} />
       {results && (
