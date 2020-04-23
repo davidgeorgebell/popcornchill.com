@@ -27,8 +27,16 @@ export const Directory = () => {
 
   return (
     <div>
-      <button onClick={() => handleOptionChange('popular')}>Popular</button>
-      <button onClick={() => handleOptionChange('top_rated')}>Top Rated</button>
+      <button
+        onClick={() => handleOptionChange('popular')}
+        disabled={option === 'popular'}>
+        Popular
+      </button>
+      <button
+        onClick={() => handleOptionChange('top_rated')}
+        disabled={option === 'top_rated'}>
+        Top Rated
+      </button>
 
       <MovieList results={results} />
       {results && (
