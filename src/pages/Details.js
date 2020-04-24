@@ -4,6 +4,7 @@ import { useFetch } from '../hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import { MovieDetails } from '../components/MovieDetails';
 import { BackButton } from '../components/BackButton';
+import '../styles/movie-details.css';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const baseURL = `https://api.themoviedb.org/3/movie/`;
@@ -28,20 +29,24 @@ export const Details = () => {
     poster_path,
     release_date,
     genres,
+    tagline,
   } = response;
   return (
-    <div className='movie-details-wrapper'>
+    <>
       <BackButton>BACK</BackButton>
-      <MovieDetails
-        title={title}
-        vote_average={vote_average}
-        overview={overview}
-        runtime={runtime}
-        poster_path={poster_path}
-        release_date={release_date}
-        genres={genres}
-        imageUrl={imageUrl}
-      />
-    </div>
+      <div className='movie-details-wrapper'>
+        <MovieDetails
+          title={title}
+          vote_average={vote_average}
+          overview={overview}
+          runtime={runtime}
+          poster_path={poster_path}
+          release_date={release_date}
+          genres={genres}
+          imageUrl={imageUrl}
+          tagline={tagline}
+        />
+      </div>
+    </>
   );
 };

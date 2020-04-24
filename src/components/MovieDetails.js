@@ -12,13 +12,35 @@ export const MovieDetails = ({
   release_date,
   genres,
   overview,
+  tagline,
 }) => {
   const { addGenreToState } = useContext(GenreContext);
+
+  const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  const reformatDate = iso => {
+    const [year, month, day] = iso.split('-');
+    return `${Number(day)} ${monthNames[Number(month) - 1]} ${year}`;
+  };
+
   return (
     <>
       <div className='movie-details__top'>
-        <h1>{title}</h1>
-        <img src={`${imageUrl}${poster_path}`} alt={`${title} Poster`} />
+        <h1 className='movie-details__title'>{title}</h1>
+        <p className='movie-details__tagline'>{tagline && tagline}</p>
         <div className='votes'>
           <p>
             <strong>
@@ -31,7 +53,6 @@ export const MovieDetails = ({
         </div>
         <time>
           <p>
-            Runtime:{' '}
             <strong>
               {runtime} mins{' '}
               <span
@@ -40,29 +61,39 @@ export const MovieDetails = ({
                 style={{ fontSize: '1.7rem' }}>
                 ⌛︎
               </span>
-            </strong>
+            </strong>{' '}
+            - runtime
           </p>
         </time>
+        <div className='movie-details__description'>
+          <p>
+            <strong>
+              {release_date && reformatDate(release_date).toString()}
+            </strong>{' '}
+            - release
+          </p>
+          <p className='movie-details__overview'>{overview}</p>
+          <ul>
+            {genres &&
+              genres.map(genre => (
+                <li key={genre.name}>
+                  <Link
+                    onClick={() => addGenreToState(genre.name)}
+                    className='genre-link'
+                    to={`/genre/${genre.id}`}
+                    aria-label={`link to other movies in ${genre.name}`}>
+                    {genre.name}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
       </div>
-      <div className='movie-details__description'></div>
-      <p>
-        Released: <strong>{release_date}</strong>
-      </p>
-      <ul>
-        {genres &&
-          genres.map(genre => (
-            <li key={genre.name}>
-              <Link
-                onClick={() => addGenreToState(genre.name)}
-                className='genre-link'
-                to={`/genre/${genre.id}`}
-                aria-label={`link to other movies in ${genre.name}`}>
-                {genre.name}
-              </Link>
-            </li>
-          ))}
-      </ul>
-      <p>{overview}</p>
+      <img
+        className='movie-details__img'
+        src={`${imageUrl}${poster_path}`}
+        alt={`${title} Poster`}
+      />
     </>
   );
 };

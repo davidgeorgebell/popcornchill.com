@@ -221,7 +221,7 @@ select {
 }
 @media (min-width: 1024px) {
   body {
-    font-size: 7px;
+    font-size: 21px;
   }
   .option-title {
     text-align: end;

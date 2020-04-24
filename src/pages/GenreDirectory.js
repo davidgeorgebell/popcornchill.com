@@ -18,7 +18,8 @@ export const GenreDirectory = () => {
   console.log(genres);
   return (
     <div>
-      <h1>Genres</h1>
+      <h1 className='option-title'>Genres</h1>
+      <h2 className='popcorn-chill'>popcorn chill</h2>
       <ul>
         {genres &&
           genres.map(genre => (

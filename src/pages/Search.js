@@ -28,6 +28,7 @@ export const Search = () => {
 
   return (
     <div className='search-page-wrapper'>
+      <h1 className='option-title'>Search</h1>
       <BackButton>Back</BackButton>
       <form type='submit' onSubmit={handleSubmit}>
         <input

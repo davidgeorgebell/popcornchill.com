@@ -53,9 +53,9 @@ export const Directory = () => {
       </button>
 
       {option === 'popular' ? (
-        <h2 className='option-title'>Popular</h2>
+        <h1 className='option-title'>Popular</h1>
       ) : (
-        <h2 className='option-title'>Top Rated</h2>
+        <h1 className='option-title'>Top Rated</h1>
       )}
       <MovieList results={results} />
       {results && (
