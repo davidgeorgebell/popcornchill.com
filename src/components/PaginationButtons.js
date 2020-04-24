@@ -8,14 +8,14 @@ export const PaginationButtons = ({ pageNumber, setPageNumber, pageLimit }) => {
         aria-label='prev page'
         disabled={pageNumber === 1}
         onClick={() => setPageNumber(pageNumber - 1)}>
-        PREV
+        Prev
       </button>
       <button
         className='pagination-button'
         aria-label='next page'
         disabled={!pageLimit}
         onClick={() => setPageNumber(pageNumber + 1)}>
-        NEXT
+        Next
       </button>
     </div>
   );
