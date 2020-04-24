@@ -13,7 +13,7 @@ export const MovieDetails = ({
   genres,
   overview,
 }) => {
-  const { setGenre } = useContext(GenreContext);
+  const { addGenreToState } = useContext(GenreContext);
   return (
     <>
       <div className='movie-details__top'>
@@ -53,7 +53,7 @@ export const MovieDetails = ({
           genres.map(genre => (
             <li key={genre.name}>
               <Link
-                onClick={() => setGenre(genre.name)}
+                onClick={() => addGenreToState(genre.name)}
                 className='genre-link'
                 to={`/genre/${genre.id}`}
                 aria-label={`link to other movies in ${genre.name}`}>
