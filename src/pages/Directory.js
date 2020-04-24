@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { useFetch } from '../hooks/useFetch';
 import { MovieList } from '../components/MovieList';
@@ -28,35 +27,32 @@ export const Directory = () => {
 
   return (
     <div>
-      <ul>
-        <li>
-          {' '}
-          <Link to='/genres' className='genre-link'>
-            Genres
-          </Link>
-        </li>
-        <li>
-          <Link to='/search' className='genre-link'>
-            Search
-          </Link>
-        </li>
-      </ul>
-      <button
-        onClick={() => handleOptionChange('popular')}
-        disabled={option === 'popular'}>
-        Popular
-      </button>
-      <button
-        onClick={() => handleOptionChange('top_rated')}
-        disabled={option === 'top_rated'}>
-        Top Rated
-      </button>
-
-      {option === 'popular' ? (
-        <h1 className='option-title'>Popular</h1>
-      ) : (
-        <h1 className='option-title'>Top Rated</h1>
+      <div className='option-buttons-wrapper'>
+        <button
+          className='option-button'
+          onClick={() => handleOptionChange('popular')}
+          disabled={option === 'popular'}>
+          Popular
+        </button>
+        <button
+          className='option-button'
+          onClick={() => handleOptionChange('top_rated')}
+          disabled={option === 'top_rated'}>
+          Top Rated
+        </button>
+        <button
+          className='option-button'
+          onClick={() => handleOptionChange('now_playing')}
+          disabled={option === 'now_playing'}>
+          Now Playing
+        </button>
+      </div>
+      {option === 'popular' && <h1 className='option-title'>Popular</h1>}
+      {option === 'top_rated' && <h1 className='option-title'>Top Rated</h1>}
+      {option === 'now_playing' && (
+        <h1 className='option-title'>Now Playing</h1>
       )}
+
       <MovieList results={results} />
       {results && (
         <PaginationButtons

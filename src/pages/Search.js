@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+
 import { useFetch } from '../hooks/useFetch';
 import { MovieList } from '../components/MovieList';
-import { BackButton } from '../components/BackButton';
+import '../styles/search.css';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const language = '&language=en';
@@ -29,9 +30,9 @@ export const Search = () => {
   return (
     <div className='search-page-wrapper'>
       <h1 className='option-title'>Search</h1>
-      <BackButton>Back</BackButton>
-      <form type='submit' onSubmit={handleSubmit}>
+      <form type='submit' onSubmit={handleSubmit} className='search-form'>
         <input
+          className='search-input'
           type='text'
           placeholder='type to search'
           onChange={handleSearch}

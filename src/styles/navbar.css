@@ -1,8 +1,18 @@
 nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 2rem;
+  margin: 0 auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.navbar-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.navbar-list__item {
+  padding: 1rem;
 }
 .title {
   font-weight: 900;

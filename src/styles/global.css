@@ -40,8 +40,36 @@ body {
   line-height: 1.5;
   font-family: var(--font-plain);
 }
-
-button {
+.back-button {
+  margin: 1rem;
+  width: 120px;
+  height: 40px;
+  padding: 0.6rem 1rem;
+  font-weight: bolder;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.light-mode .back-button {
+  border: 3px solid var(--colour-dark);
+}
+.pagination-buttons__container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5rem 0rem;
+}
+.pagination-button {
+  margin: 1rem;
+  width: 150px;
+  height: 50px;
+  padding: 0.6rem 1rem;
+  font-weight: bolder;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.light-mode .pagination-button {
+  border: 3px solid var(--colour-dark);
+}
+.option-button {
   margin: 1rem;
   width: 150px;
   height: 50px;
@@ -53,15 +81,15 @@ button {
 button:disabled {
   cursor: initial;
 }
-.light-mode button {
-  box-shadow: -3px 5px var(--colour-darkish);
+.light-mode .option-button {
+  box-shadow: -2px 2px var(--colour-darkish);
   border: 3px solid var(--colour-darkish);
 }
 /* .light-mode button:hover {
   background: var(--colour-darkish);
   color: var(--colour-light);
 } */
-.dark-mode button {
+.dark-mode .option-button {
   box-shadow: -3px 5px var(--colour-dark);
   border: 3px solid var(--colour-dark);
 }
@@ -192,6 +220,12 @@ select {
   text-align: center;
   font-size: 3.2rem;
 }
+.option-buttons-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -237,15 +271,8 @@ select {
     font-size: 9rem;
   }
 }
-/* @media (-width: 768px) {
-  .option-title {
-    text-align: center;
-    font-size: 4rem;
+@media (max-width: 768px) {
+  .option-buttons-wrapper {
+    justify-content: center;
   }
 }
-@media (max-width: 900px) {
-  .option-title {
-    text-align: center;
-    font-size: 5rem;
-  }
-} */

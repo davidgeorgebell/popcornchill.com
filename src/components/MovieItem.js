@@ -8,10 +8,14 @@ export const MovieItem = ({ movie }) => {
     <div className='movie-list__item-wrapper'>
       <li key={movie.id} className='movie-list__item'>
         <Link to={`/details/${movie.id}`} className='movie-list__link'>
-          <img
-            src={`${imageUrl}${movie.poster_path}`}
-            alt={`${movie.title} Poster`}
-          />
+          {movie.poster_path ? (
+            <img
+              src={`${imageUrl}${movie.poster_path}`}
+              alt={`${movie.title} Poster`}
+            />
+          ) : (
+            <div className='no-image-holder'>No image available</div>
+          )}
           <h2 className='movie-list__title'>{movie.title}</h2>
         </Link>
       </li>

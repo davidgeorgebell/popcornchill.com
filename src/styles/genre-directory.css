@@ -1,0 +1,7 @@
+.genre-directory__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.genre-directory__list-item {
+  padding: 10px;
+}

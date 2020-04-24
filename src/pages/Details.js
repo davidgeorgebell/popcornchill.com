@@ -33,7 +33,6 @@ export const Details = () => {
   } = response;
   return (
     <>
-      <BackButton>BACK</BackButton>
       <div className='movie-details-wrapper'>
         <MovieDetails
           title={title}
@@ -47,6 +46,7 @@ export const Details = () => {
           tagline={tagline}
         />
       </div>
+      <BackButton>⬅ BACK</BackButton>
     </>
   );
 };

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { GenreContext } from '../contexts/GenreContext';
 import { useFetch } from '../hooks/useFetch';
+import '../styles/genre-directory.css';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const genreListUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
@@ -19,11 +20,11 @@ export const GenreDirectory = () => {
   return (
     <div>
       <h1 className='option-title'>Genres</h1>
-      <h2 className='popcorn-chill'>popcorn chill</h2>
-      <ul>
+      {/* <h2 className='popcorn-chill'>popcorn chill</h2> */}
+      <ul className='genre-directory__list'>
         {genres &&
           genres.map(genre => (
-            <li key={genre.name}>
+            <li key={genre.name} className='genre-directory__list-item'>
               <Link
                 onClick={() => addGenreToState(genre.name)}
                 className='genre-link'
