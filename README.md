@@ -4,6 +4,7 @@
 
 - React with Hooks
 - React Context for state management
+- React Router for page routes
 - TMDB API (The movie database)
 - CSS
 
