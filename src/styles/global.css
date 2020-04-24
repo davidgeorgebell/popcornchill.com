@@ -190,7 +190,7 @@ select {
 }
 .option-title {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3.2rem;
 }
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -207,7 +207,7 @@ select {
   }
   .option-title {
     text-align: end;
-    font-size: 6rem;
+    font-size: 4.7rem;
   }
 }
 @media (min-width: 768px) {
@@ -216,16 +216,16 @@ select {
   }
   .option-title {
     text-align: end;
-    font-size: 8rem;
+    font-size: 5rem;
   }
 }
 @media (min-width: 1024px) {
   body {
-    font-size: 20px;
+    font-size: 7px;
   }
   .option-title {
     text-align: end;
-    font-size: 9rem;
+    font-size: 7.7rem;
   }
 }
 @media (min-width: 1280px) {
@@ -234,7 +234,7 @@ select {
   }
   .option-title {
     text-align: end;
-    font-size: 10rem;
+    font-size: 9rem;
   }
 }
 /* @media (-width: 768px) {

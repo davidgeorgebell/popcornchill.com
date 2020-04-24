@@ -28,7 +28,7 @@ export const GenrePage = () => {
   return (
     <div>
       <BackButton>BACK</BackButton>
-      <h1>{genre}</h1>
+      <h2 className='option-title'>{genre}</h2>
       <MovieList results={results} />
       {results && (
         <PaginationButtons
