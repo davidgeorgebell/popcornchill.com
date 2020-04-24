@@ -1,17 +1,5 @@
 :root {
-  --alphaFont: 'Helvetica Neue', Helvetica, sans-serif;
-  --alpha: #121723;
-  --bravo: #465165;
-  --bravoDark: #9ca8bd;
-  --charlie: #156dff;
-  --delta: #fa1608;
-  --light: #ffffff;
-  --dark: #121723;
-  --grey: #33332d;
-  --black: #1c1c1b;
   --font-plain: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-special: 'Barlow Condensed', Helvetica, sans-serif;
-  --font-mono: 'Menlo', Courier, 'Courier New', 'Andale Mono', monospace;
   --colour-dark: #050505;
   --colour-darkish: #404040;
   --colour-lightish: #e6e6e6;
@@ -55,6 +43,7 @@ body {
 .dark-mode .back-button {
   color: var(--colour-dark);
   border: none;
+  background-color: var(--colour-light);
 }
 .pagination-buttons__container {
   display: flex;
@@ -75,7 +64,17 @@ body {
 }
 .dark-mode .pagination-button {
   color: var(--colour-dark);
+  background-color: var(--colour-light);
   border: none;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+button:disabled {
+  cursor: initial;
 }
 .option-button {
   margin: 1rem;
@@ -86,30 +85,16 @@ body {
   font-size: 1rem;
   cursor: pointer;
 }
-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-button:disabled {
-  cursor: initial;
-}
 .light-mode .option-button {
   box-shadow: -2px 2px var(--colour-darkish);
   border: 3px solid var(--colour-darkish);
 }
-/* .light-mode button:hover {
-  background: var(--colour-darkish);
-  color: var(--colour-light);
-} */
+
 .dark-mode .option-button {
   color: var(--colour-dark);
   border: none;
+  background-color: var(--colour-light);
 }
-/* .dark-mode button:hover {
-  background: var(--colour-dark);
-  color: var(--light);
-} */
 
 .App {
   min-height: 100vh;
