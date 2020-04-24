@@ -20,7 +20,6 @@ export const Details = () => {
 
   const imageUrl = 'https://image.tmdb.org/t/p/w400/';
 
-  console.log('RESPONSE', response);
   const {
     title,
     vote_average,

@@ -16,7 +16,6 @@ export const GenreDirectory = () => {
 
   const { genres } = response;
 
-  console.log(genres);
   return (
     <div>
       <h1 className='option-title'>Genres</h1>
