@@ -52,6 +52,10 @@ body {
 .light-mode .back-button {
   border: 3px solid var(--colour-dark);
 }
+.dark-mode .back-button {
+  color: var(--colour-dark);
+  border: none;
+}
 .pagination-buttons__container {
   display: flex;
   justify-content: space-evenly;
@@ -69,6 +73,10 @@ body {
 .light-mode .pagination-button {
   border: 3px solid var(--colour-dark);
 }
+.dark-mode .pagination-button {
+  color: var(--colour-dark);
+  border: none;
+}
 .option-button {
   margin: 1rem;
   width: 150px;
@@ -79,9 +87,9 @@ body {
   cursor: pointer;
 }
 button {
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 button:disabled {
   cursor: initial;
@@ -95,8 +103,8 @@ button:disabled {
   color: var(--colour-light);
 } */
 .dark-mode .option-button {
-  box-shadow: -3px 5px var(--colour-dark);
-  border: 3px solid var(--colour-dark);
+  color: var(--colour-dark);
+  border: none;
 }
 /* .dark-mode button:hover {
   background: var(--colour-dark);
