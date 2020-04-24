@@ -1,10 +1,5 @@
 import React, { useContext } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import { ThemeContext } from './contexts/ThemeContext';
@@ -20,7 +15,7 @@ function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
     <GenreContextProvider>
-      <Router>
+      <HashRouter>
         <div className={darkMode ? 'dark-mode' : 'light-mode'}>
           <div className='App'>
             <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -46,7 +41,7 @@ function App() {
             </main>
           </div>
         </div>
-      </Router>
+      </HashRouter>
     </GenreContextProvider>
   );
 }
