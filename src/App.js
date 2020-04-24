@@ -14,37 +14,40 @@ import { Details } from './pages/Details';
 import { GenrePage } from './pages/GenrePage';
 import { GenreDirectory } from './pages/GenreDirectory';
 import { Search } from './pages/Search';
+import { GenreContextProvider } from './contexts/GenreContext';
 
 function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
-    <Router>
-      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-        <div className='App'>
-          <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-          <main>
-            <Switch>
-              <Route exact path='/'>
-                <Directory />
-              </Route>
-              <Route exact path='/details/:movieId'>
-                <Details />
-              </Route>
-              <Route exact path='/genre/:genreId'>
-                <GenrePage />
-              </Route>
-              <Route exact path='/genres'>
-                <GenreDirectory />
-              </Route>
-              <Route exact path='/search'>
-                <Search />
-              </Route>
-              <Redirect to='/' />
-            </Switch>
-          </main>
+    <GenreContextProvider>
+      <Router>
+        <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+          <div className='App'>
+            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+            <main>
+              <Switch>
+                <Route exact path='/'>
+                  <Directory />
+                </Route>
+                <Route exact path='/details/:movieId'>
+                  <Details />
+                </Route>
+                <Route exact path='/genre/:genreId'>
+                  <GenrePage />
+                </Route>
+                <Route exact path='/genres'>
+                  <GenreDirectory />
+                </Route>
+                <Route exact path='/search'>
+                  <Search />
+                </Route>
+                <Redirect to='/' />
+              </Switch>
+            </main>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </GenreContextProvider>
   );
 }
 

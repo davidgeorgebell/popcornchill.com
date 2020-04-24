@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { GenreContext } from '../contexts/GenreContext';
 import { useFetch } from '../hooks/useFetch';
 import { PaginationButtons } from '../components/PaginationButtons';
 import { MovieList } from '../components/MovieList';
@@ -10,6 +12,7 @@ const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}
 `;
 
 export const GenrePage = () => {
+  const { genre } = useContext(GenreContext);
   const [pageNumber, setPageNumber] = useState(1);
 
   const { genreId } = useParams();
@@ -25,6 +28,7 @@ export const GenrePage = () => {
   return (
     <div>
       <BackButton>BACK</BackButton>
+      <h1>{genre}</h1>
       <MovieList results={results} />
       {results && (
         <PaginationButtons
