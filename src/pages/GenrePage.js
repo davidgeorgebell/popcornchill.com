@@ -5,7 +5,6 @@ import { GenreContext } from '../contexts/GenreContext';
 import { useFetch } from '../hooks/useFetch';
 import { PaginationButtons } from '../components/PaginationButtons';
 import { MovieList } from '../components/MovieList';
-import { BackButton } from '../components/BackButton';
 
 const API_KEY = process.env.REACT_APP_MOVIE_KEY;
 const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}
@@ -27,7 +26,6 @@ export const GenrePage = () => {
   const pageLimit = page === 0 || page < total_pages;
   return (
     <div>
-      <BackButton>BACK</BackButton>
       <h1 className='option-title'>{genre}</h1>
       <MovieList results={results} />
       {results && (

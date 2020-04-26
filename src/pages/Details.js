@@ -45,7 +45,7 @@ export const Details = () => {
           tagline={tagline}
         />
       </div>
-      <BackButton>⬅ BACK</BackButton>
+      <BackButton>BACK</BackButton>
     </>
   );
 };

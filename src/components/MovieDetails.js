@@ -43,35 +43,50 @@ export const MovieDetails = ({
         <p className='movie-details__tagline'>{tagline && tagline}</p>
         <div className='votes'>
           <p>
-            <strong>
-              <span role='img' aria-label='star' style={{ fontSize: '1.7rem' }}>
-                ✰
-              </span>{' '}
-              {vote_average} / 10
-            </strong>
+            {vote_average ? (
+              <strong>
+                <span
+                  role='img'
+                  aria-label='star'
+                  style={{ fontSize: '1.7rem' }}>
+                  ✰
+                </span>{' '}
+                {vote_average} / 10
+              </strong>
+            ) : (
+              <p>No Reviews Yet</p>
+            )}
           </p>
         </div>
-        <time>
-          <p>
-            <strong>
-              {runtime} mins{' '}
-              <span
-                role='img'
-                aria-label='clock'
-                style={{ fontSize: '1.7rem' }}>
-                ⌛︎
-              </span>
-            </strong>{' '}
-            - runtime
-          </p>
-        </time>
+        {runtime ? (
+          <time>
+            <p>
+              <strong>
+                {runtime} mins{' '}
+                <span
+                  role='img'
+                  aria-label='clock'
+                  style={{ fontSize: '1.7rem' }}>
+                  ⌛︎
+                </span>
+              </strong>{' '}
+              - runtime
+            </p>
+          </time>
+        ) : (
+          <p>Runtime not available</p>
+        )}
         <div className='movie-details__description'>
-          <p>
-            <strong>
-              {release_date && reformatDate(release_date).toString()}
-            </strong>{' '}
-            - release
-          </p>
+          {release_date ? (
+            <p>
+              <strong>
+                {release_date && reformatDate(release_date).toString()}
+              </strong>{' '}
+              - release
+            </p>
+          ) : (
+            <p>Release Date tbc</p>
+          )}
           <p className='movie-details__overview'>{overview}</p>
           <ul>
             {genres &&
@@ -89,11 +104,13 @@ export const MovieDetails = ({
           </ul>
         </div>
       </div>
-      <img
-        className='movie-details__img'
-        src={`${imageUrl}${poster_path}`}
-        alt={`${title} Poster`}
-      />
+      {poster_path && (
+        <img
+          className='movie-details__img'
+          src={`${imageUrl}${poster_path}`}
+          alt={`${title} Poster`}
+        />
+      )}
     </>
   );
 };
