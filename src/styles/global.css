@@ -105,6 +105,14 @@ button:disabled {
   background-color: var(--colour-light);
   transition: background-color 0.25s ease-out;
 }
+.dark-mode body {
+  background-color: var(--colour-dark);
+  transition: background-color 0.25s ease-out;
+}
+.light-mode body {
+  background-color: var(--colour-light);
+  transition: background-color 0.25s ease-out;
+}
 .light-mode h1,
 .light-mode h2,
 .light-mode h3,
