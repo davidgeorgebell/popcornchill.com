@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 html body {
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 main {
@@ -98,21 +98,14 @@ button:disabled {
   min-height: 100vh;
 }
 .dark-mode {
-  background-color: var(--colour-dark);
-  transition: background 0.25s ease-out;
-}
-.light-mode {
-  background-color: var(--colour-light);
-  transition: background 0.25s ease-out;
-}
-.dark-mode html {
   background: var(--colour-dark);
   transition: background 0.25s ease-out;
 }
-.light-mode html {
+.light-mode {
   background: var(--colour-light);
   transition: background 0.25s ease-out;
 }
+
 .light-mode h1,
 .light-mode h2,
 .light-mode h3,
